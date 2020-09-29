@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
+import Deck from './components/Deck'
 
 class App extends Component {
   render() {
@@ -10,27 +11,25 @@ class App extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Go Home</Link>
+                <Link to="/">Deck</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/1">Page 1</Link>
               </li>
               <li>
                 <Link to="/2">Page 2</Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </header>
         <Switch>
-          <Route exact path="/">
-            Home
-          </Route>
-          <Route exact path="/1">
+          <Route exact path="/" component={Deck} />
+          {/* <Route exact path="/1">
             Page 1
           </Route>
           <Route exact path="/2">
             Page 2
-          </Route>
+          </Route> */}
           <Route path="*">Not Found</Route>
         </Switch>
       </>
